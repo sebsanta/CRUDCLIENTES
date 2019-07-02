@@ -66,5 +66,11 @@ public class ClienteTests {
 		assertTrue("Es " + pedro.getNombres() + " pero deberia ser pedro ", pedro.getNombres().equals("pedro"));
 	}
 	
+	@Test
+	public void cuandoInsertoUnoLuegoListoDebeSer1() {
+		this.dao.save(new Cliente("99999-9","pedro","piedra","ssantandersnw@gmail.com","+5693241244"));
+		int cuantos = this.dao.findAll().size();
+		assertTrue("Son " + cuantos + " Cuando deberian ser 3" , cuantos == 3);
+	}
 
 }
